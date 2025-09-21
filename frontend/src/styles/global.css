@@ -1,0 +1,159 @@
+/* === Color Palette === */
+:root {
+  --color-background: #f7f7f7;
+  --color-canvas-background: #f7f7f7;
+  --color-text: #555;
+
+  --color-primary: #3498db;
+  --color-primary-hover: #2980b9;
+  --color-border: #ddd;
+
+  --radius: 0.5rem;
+  --spacing: 1rem;
+}
+
+/* === Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Base styles === */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  padding-left: var(--spacing);
+}
+
+/* === Layout === */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 400px;
+  border-left: 1px solid var(--color-border);
+  padding: var(--spacing);
+  overflow-y: auto;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing);
+  overflow: hidden;
+}
+
+/* === Containers === */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  background-color: var(--color-canvas-background);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  margin-bottom: var(--spacing);
+}
+
+.pendulum-canvas {
+  flex: 1;
+  border: 0.125rem solid var(--color-border);
+  background: var(--color-canvas-background);
+  border-radius: var(--radius);
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: var(--spacing);
+}
+
+/* === Pendulum Controls === */
+.pendulum-controls {
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-border);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  background-color: var(--color-canvas-background);
+}
+
+.pendulum-controls h4 {
+  margin-bottom: 0.5rem;
+}
+
+.pendulum-controls label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.pendulum-controls input[type="range"] {
+  width: 100%;
+  margin-top: 0.25rem;
+  accent-color: var(--color-primary);
+}
+
+/* === Buttons === */
+button {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* === Header === */
+header {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  padding: var(--spacing) 0;
+  margin-left: var(--spacing);
+  text-align: center;
+}
+
+/* === Pendulum Simulation Styles === */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  margin-top: var(--spacing);
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-text);
+  padding-bottom: var(--spacing);
+}

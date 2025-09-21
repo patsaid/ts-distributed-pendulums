@@ -1,0 +1,77 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  backend-base: &backend-base
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - REDIS_URL=redis://redis:6379
+    command: npx tsx src/index.ts
+    depends_on:
+      - redis
+
+  backend1:
+    <<: *backend-base
+    ports:
+      - "3001:3001"
+      - "4001:4001"
+    environment:
+      - PORT=3001
+      - INDEX=0
+
+  backend2:
+    <<: *backend-base
+    ports:
+      - "3002:3002"
+      - "4002:4002"
+    environment:
+      - PORT=3002
+      - INDEX=1
+
+  backend3:
+    <<: *backend-base
+    ports:
+      - "3003:3003"
+      - "4003:4003"
+    environment:
+      - PORT=3003
+      - INDEX=2
+
+  backend4:
+    <<: *backend-base
+    ports:
+      - "3004:3004"
+      - "4004:4004"
+    environment:
+      - PORT=3004
+      - INDEX=3
+
+  backend5:
+    <<: *backend-base
+    ports:
+      - "3005:3005"
+      - "4005:4005"
+    environment:
+      - PORT=3005
+      - INDEX=4
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    command: npm run dev -- --host
