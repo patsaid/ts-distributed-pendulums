@@ -57,7 +57,7 @@ Frontend (React) <-- WebSockets --> Backend (Express + WS)
 
 4. Open API Docs (Swagger UI)
 
-   The backend serves OpenAPI/Swagger documentation at: http://localhost:3000/api-docs
+   The backend serves OpenAPI/Swagger documentation at: http://localhost:3001/api-docs
 
 ## Controls
 
