@@ -88,12 +88,6 @@ Run tests for backend/frontend:
 npx vitest run --coverage
 ```
 
-Run tests for frontend:
-
-```bash
-npx vitest run --coverage
-```
-
 ## Future Improvements
 
 ### Fully Distributed Architecture:

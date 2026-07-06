@@ -46,7 +46,7 @@ export class Pendulum {
     // Total angular acceleration
     const alpha = alphaGravity + alphaWind;
 
-    // Adjust effect of mass on motion (same as your original mass factor idea)
+    // Adjust effect of mass on motion
     const massFactor = Math.pow(1 / mass, 0.2);
 
     this.state.omega = omega + alpha * dt * massFactor;
